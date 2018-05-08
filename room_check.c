@@ -22,7 +22,7 @@ int		get_name_coords(char *s, t_room *room, int type)
 	while (s[i] && s[i] != ' ')
 		i++;
 	j = i;
-	if (s[i++] != ' ' || s[0] == 'L')
+	if (i == 0 || s[i++] != ' ' || s[0] == 'L')
 		return (-1);
 	if ((room->coord[0] = ft_atoi_spec(&s[i], ' ')) == -1)
 		return (-1);
@@ -50,11 +50,11 @@ int		room_exist(t_room *room)
 	new = room;
 	while (new->next != NULL)
 		new = new->next;
-	while (room->next->next != NULL)
+	while (room->next != NULL)
 	{
 		if (!ft_strcmp(room->name, new->name) || (room->coord[0] ==
 			new->coord[0] && room->coord[1] == new->coord[1]))
-			return (-1);
+			return (-2);
 		room = room->next;
 	}
 	return (0);

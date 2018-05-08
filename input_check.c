@@ -32,12 +32,12 @@ int		input_rooms(t_room *room, t_link *link, char *l, char **out)
 
 	if ((sw = rooms_check(&l, room, out)) < 0)
 	{
-		del_last_nameless_room(room);
 		if (*l == 0 || sw == -2 || room_st_fin(room, 0) == -1)
 		{
 			free(l);
 			return (-1);
 		}
+		del_last_nameless_room(room);
 		if (links_check(l, link, room) == -1)
 		{
 			free(l);
@@ -69,7 +69,8 @@ int		check_input(int *ants_n, t_room *room, t_link *link, char **out)
 	fun = 0;
 	while (fun != -1 && get_next_line(0, &l))
 	{
-		*out = ft_concat(*out, l);
+		if (*l)
+			*out = ft_concat(*out, l);
 		if (l[0] == '#' && ft_strcmp(l, "##start") && ft_strcmp(l, "##end"))
 			free(l);
 		else if (fun == 0)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vis_bon</title>
+	<style type="text/css">
+	#body {
+		width: 2000px;
+		height: 1000px;
+	}
+	#can {
+		position: absolute;
+		top: 30px;
+		left: 10px;
+		border: 10px solid black;
+		border-radius: 10px;
+		background-color: rgb(30, 30, 30);
+	}
+	#file {
+		position: fixed;
+		background-color: red;
+		border: 3px solid black;
+		border-radius: 5px;
+		left: 50%;
+		top: 5px;
+		transform: translate(-50%);
+	}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.0/jcanvas.js"></script>
+</head>
+<body id="body">
+	<canvas id="can" width="2000" height="1100">
+		Browser does not support HTML5 Canvas!!!
+	</canvas>
+	<input type="file" name="vis" id="file">
+	<script src="vis_bon.js"></script>
+</body>
+</html>
