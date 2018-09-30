@@ -2,7 +2,7 @@
 The goal of this project is to find the quickest way to get n ants across the farm.
 
 Obviously, there are some basic constraints. To be the first to arrive, <br />
-ants will need to take the shortest path. They will also need to avoid traffic <br />
+ants will need to take the shortest path (or several). They will also need to avoid traffic <br />
 jams as well as walking all over their fellow ants.
 
 At the beginning of the game, all the ants are in the room ##start. <br />
@@ -62,12 +62,12 @@ There are two parts:
 Lines that start with ## are commands modifying the properties of the line that
 comes right after.
 
-For example, ##start signals the ant farm’s entrance and ##end its exit.
+##start signals the ant farm’s entrance and ##end its exit.
 
 Any non compliant or empty lines will automatically stop the ant farm’s reading
 as well as the orderly processing of the acquired data.
 
-If there isn’t enough data to process normally you must display ERROR.
+If there isn’t enough data to process normally program will display ERROR.
 
 Program displays results on the standard output in the following format:
 
